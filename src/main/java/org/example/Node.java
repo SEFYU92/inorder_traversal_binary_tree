@@ -10,7 +10,7 @@ class Node {
     Node right;
     Node left;
 
-    void buildInorderTree(Stack<Integer> nodes, int currentDepth, AtomicInteger maxDepth, AtomicInteger lastLevelNodesNumber) {
+    public void buildInorderTree(Stack<Integer> nodes, int currentDepth, AtomicInteger maxDepth, AtomicInteger lastLevelNodesNumber) {
         if (left == null && currentDepth < maxDepth.get()) {
             System.out.println("left child");
             left = new Node();
@@ -62,7 +62,6 @@ class Node {
           1   3 5
 */
     public void readPreorderTree(List<Integer> preorderTreeList, int size) {
-        System.out.println("value : "+this.value);
         preorderTreeList.add(this.value);
         if (preorderTreeList.size() == size) {
             return;
