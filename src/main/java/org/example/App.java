@@ -32,16 +32,13 @@ public class App {
 
         var depth = log2(nodesStack.size());
         var maxDepth = new AtomicInteger(depth);
-        System.out.println(depth);
 
         var numberOfMaxDepthNodes = new AtomicInteger((int) (nodesStack.size() - (Math.pow(2, depth) - 1)));
-        System.out.println(numberOfMaxDepthNodes);
 
         var node = new Node();
         node.buildInorderTree(nodesStack, depth, maxDepth, numberOfMaxDepthNodes);
         var root = node.getRoot();
         var preorderTreeList = new ArrayList<Integer>(10);
-        System.out.println("reading");
         root.readPreorderTree(preorderTreeList,10);
     }
 
